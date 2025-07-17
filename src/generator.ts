@@ -22,7 +22,7 @@ function generatePlate(region: string) {
     const code = randInt(65, 90);
     plate += String.fromCharCode(code);
   }
-  const digits = randInt(100, 999);
+  const digits = randInt(1000, 9999);
   return `${plate} ${digits}`;
 }
 
