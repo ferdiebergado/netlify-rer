@@ -11,8 +11,8 @@ const lastnamePath = path.join(dataDir, LASTNAMES_FILE);
 async function generateDriver(): Promise<string> {
   const firstnames = await getDataFromFile(firstnamePath);
   const lastnames = await getDataFromFile(lastnamePath);
-  const fname = firstnames[randInt(0, firstnames.length - 1)];
-  const lname = lastnames[randInt(0, lastnames.length - 1)];
+  const fname = firstnames[randInt(0, firstnames.length - 2)];
+  const lname = lastnames[randInt(0, lastnames.length - 2)];
   return `${fname.toUpperCase()} ${lname.toUpperCase()}`;
 }
 
