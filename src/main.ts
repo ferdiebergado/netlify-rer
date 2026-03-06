@@ -15,8 +15,8 @@ const errorDiv = document.querySelector<HTMLDivElement>('#error');
 const plateDiv = document.querySelector<HTMLDivElement>('#plate');
 const driverDiv = document.querySelector<HTMLDivElement>('#driver');
 
-const firstNames = parseData(firstNamesData.trim());
-const lastNames = parseData(lastNamesData.trim());
+const firstNames = parseData(firstNamesData);
+const lastNames = parseData(lastNamesData);
 
 regionSelect?.addEventListener('change', generate);
 generateBtn?.addEventListener('click', generate);

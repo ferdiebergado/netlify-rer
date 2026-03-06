@@ -20,7 +20,7 @@ export function generateRandomLetters(length: number): string {
 }
 
 export function parseData(data: string) {
-  const lines = data.split('\n');
+  const lines = data.trim().split('\n');
 
   return lines.map(l => l.trim());
 }
