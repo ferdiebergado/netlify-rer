@@ -27,35 +27,34 @@
           <h3 class="text-3xl font-semibold" id="driver">Driver</h3>
         </div>
 
-        <form class="flex justify-between gap-5">
-          <select
-            class="flex-1 rounded-md border border-gray-300 p-3 dark:bg-gray-800 dark:text-white"
-            id="region"
-          >
-            <option value="A">Region I</option>
-            <option value="B">Region II</option>
-            <option value="C">Region III</option>
-            <option value="D">CALABARZON</option>
-            <option value="V">MIMAROPA</option>
-            <option value="A">CAR</option>
-            <option value="P" selected>NCR</option>
-            <option value="E">Region V</option>
-            <option value="F">Region VI</option>
-            <option value="G">Region VII</option>
-            <option value="G">Region NIR</option>
-            <option value="H">Region VIII</option>
-            <option value="J">Region IX</option>
-            <option value="K">Region X</option>
-            <option value="L">Region XI</option>
-            <option value="M">Region XII</option>
-            <option value="L">Caraga</option>
-            <option value="J">BARMM</option>
-          </select>
-          <button
-            type="button"
-            class="flex-0 rounded-md bg-sky-600 px-5 py-3 text-white"
-            id="generate"
-          >
+        <form class="flex flex-col">
+          <fieldset class="mb-8 flex items-center gap-5">
+            <label for="region">Region:</label>
+            <select
+              class="flex-1 rounded-md border border-gray-300 p-3 dark:bg-gray-800 dark:text-white"
+              id="region"
+            >
+              <option value="A">Region I</option>
+              <option value="B">Region II</option>
+              <option value="C">Region III</option>
+              <option value="D">CALABARZON</option>
+              <option value="V">MIMAROPA</option>
+              <option value="A">CAR</option>
+              <option value="P" selected>NCR</option>
+              <option value="E">Region V</option>
+              <option value="F">Region VI</option>
+              <option value="G">Region VII</option>
+              <option value="G">Region NIR</option>
+              <option value="H">Region VIII</option>
+              <option value="J">Region IX</option>
+              <option value="K">Region X</option>
+              <option value="L">Region XI</option>
+              <option value="M">Region XII</option>
+              <option value="L">Caraga</option>
+              <option value="J">BARMM</option>
+            </select>
+          </fieldset>
+          <button type="button" class="rounded-md bg-sky-600 px-5 py-3 text-white" id="generate">
             GENERATE
           </button>
         </form>
