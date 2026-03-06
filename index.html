@@ -15,7 +15,7 @@
   </head>
   <body>
     <main class="flex h-screen items-center justify-center bg-gray-100 dark:bg-gray-800">
-      <article
+      <section
         class="w-lg rounded-2xl bg-white px-10 py-12 shadow-md dark:bg-gray-900 dark:text-white"
       >
         <h1 class="mb-10 text-center text-2xl font-semibold">Random Plate Generator</h1>
@@ -23,16 +23,16 @@
         <div id="error" class="rounded-md bg-red-200 px-3 py-5 text-center text-red-800"></div>
 
         <div class="my-12 flex flex-col items-center gap-3">
-          <h2 class="text-6xl font-bold" id="plate">Plate</h2>
-          <h3 class="text-3xl font-semibold" id="driver">Driver</h3>
+          <h2 id="plate" class="text-6xl font-bold">Plate</h2>
+          <h3 id="driver" class="text-3xl font-semibold">Driver</h3>
         </div>
 
         <form class="flex flex-col">
           <fieldset class="mb-8 flex items-center gap-5">
             <label for="region">Region:</label>
             <select
-              class="flex-1 rounded-md border border-gray-300 p-3 dark:bg-gray-800 dark:text-white"
               id="region"
+              class="flex-1 rounded-md border border-gray-300 p-3 dark:bg-gray-800 dark:text-white"
             >
               <option value="A">Region I</option>
               <option value="B">Region II</option>
@@ -54,11 +54,11 @@
               <option value="J">BARMM</option>
             </select>
           </fieldset>
-          <button type="button" class="rounded-md bg-sky-600 px-5 py-3 text-white" id="generate">
+          <button type="button" id="generate" class="rounded-md bg-sky-600 px-5 py-3 text-white">
             GENERATE
           </button>
         </form>
-      </article>
+      </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
