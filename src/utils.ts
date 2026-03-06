@@ -27,3 +27,15 @@ export function generatePlate(firstChar = 'P', nextCharsLength = 2): string {
 
   return `${firstChar}${nextChars} ${digits}`;
 }
+
+export function generateDriver(firstNames: string[], lastNames: string[]): string {
+  let randomIndex = getRandomIndex(firstNames.length);
+  const firstName = firstNames[randomIndex];
+
+  randomIndex = getRandomIndex(lastNames.length);
+  const lastName = lastNames[randomIndex];
+
+  const driver = `${firstName} ${lastName}`;
+
+  return driver.toLocaleUpperCase();
+}
