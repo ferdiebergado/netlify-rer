@@ -1,4 +1,4 @@
-export const getRandomIndex = (arrLen: number) => Math.floor(Math.random() * arrLen);
+export const getRandomIndex = (arrLength: number): number => Math.floor(Math.random() * arrLength);
 
 export function generateFourDigitNumber(): number {
   const min = 1000;
@@ -15,8 +15,15 @@ export function generateRandomLetters(length: number): string {
   return result;
 }
 
-export const parseData = (data: string) =>
+export const parseData = (data: string): string[] =>
   data
     .split('\n')
     .map(l => l.trim())
     .filter(l => l.length > 0);
+
+export function generatePlate(firstChar = 'P', nextCharsLength = 2): string {
+  const nextChars = generateRandomLetters(nextCharsLength).toLocaleUpperCase();
+  const digits = generateFourDigitNumber();
+
+  return `${firstChar}${nextChars} ${digits}`;
+}

@@ -2,7 +2,7 @@ import firstNamesData from './assets/firstnames.txt?raw';
 import lastNamesData from './assets/lastnames.txt?raw';
 import './style.css';
 
-import { generateFourDigitNumber, generateRandomLetters, getRandomIndex, parseData } from './utils';
+import { generatePlate, getRandomIndex, parseData } from './utils';
 
 const regionSelect = document.querySelector<HTMLSelectElement>('#region');
 const generateBtn = document.querySelector<HTMLButtonElement>('#generate');
@@ -22,10 +22,7 @@ function generate() {
   if (errorDiv) errorDiv.style.display = 'none';
 
   try {
-    const firstLetter = regionSelect?.value;
-    const nextLetters = generateRandomLetters(2).toLocaleUpperCase();
-    const numbers = generateFourDigitNumber();
-    const plate = `${firstLetter}${nextLetters} ${numbers}`;
+    const plate = generatePlate(regionSelect?.value);
 
     let randomIndex = getRandomIndex(firstNames.length);
     const firstName = firstNames[randomIndex];
