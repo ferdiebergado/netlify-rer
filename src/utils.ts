@@ -1,14 +1,20 @@
-import fs from 'fs/promises';
-import { randomInt } from 'node:crypto';
+export function getRandomElement(arr: string[]) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
 
-function randInt(min: number, max: number): number {
-  return randomInt(min, max + 1);
+  return arr[randomIndex];
 }
 
-async function getDataFromFile(file: string): Promise<string[]> {
-  const data = await fs.readFile(file, { encoding: 'utf-8' });
-
-  return data.split('\n');
+export function generateFourDigitNumber(): number {
+  const min = 1000;
+  const max = 9999;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export { randInt, getDataFromFile };
+export function generateRandomLetters(length: number): string {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
