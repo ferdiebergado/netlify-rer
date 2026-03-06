@@ -1,14 +1,14 @@
 // @ts-check
 
-import eslint from "@eslint/js";
+import eslint from '@eslint/js';
 import prettier from 'eslint-config-prettier';
-import { defineConfig } from "eslint/config";
-import tseslint from "typescript-eslint";
+import { defineConfig } from 'eslint/config';
+import tseslint from 'typescript-eslint';
 
 export default defineConfig([
-  { ignores: ["dist"] },
+  { ignores: ['dist'] },
   {
-    files: ["src/**/*.ts"],
+    files: ['src/**/*.ts'],
     extends: [eslint.configs.recommended, tseslint.configs.strict, prettier],
   },
 ]);

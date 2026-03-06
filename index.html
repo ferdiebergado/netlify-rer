@@ -14,29 +14,22 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body>
-    <main
-      class="flex h-screen items-center justify-center bg-gray-100 dark:bg-gray-800"
-    >
+    <main class="flex h-screen items-center justify-center bg-gray-100 dark:bg-gray-800">
       <article
-        class="shadow-md w-lg px-10 py-12 rounded-2xl bg-white dark:bg-gray-900 dark:text-white"
+        class="w-lg rounded-2xl bg-white px-10 py-12 shadow-md dark:bg-gray-900 dark:text-white"
       >
-        <h1 class="text-2xl font-semibold mb-10 text-center">
-          Random Plate Generator
-        </h1>
+        <h1 class="mb-10 text-center text-2xl font-semibold">Random Plate Generator</h1>
 
-        <div
-          id="error"
-          class="px-3 py-5 bg-red-200 text-red-800 rounded-md text-center"
-        ></div>
+        <div id="error" class="rounded-md bg-red-200 px-3 py-5 text-center text-red-800"></div>
 
-        <div class="flex flex-col items-center my-12 gap-3">
+        <div class="my-12 flex flex-col items-center gap-3">
           <h2 class="text-6xl font-bold" id="plate">Plate</h2>
           <h3 class="text-3xl font-semibold" id="driver">Driver</h3>
         </div>
 
-        <div class="flex gap-5 justify-between">
+        <div class="flex justify-between gap-5">
           <select
-            class="p-3 border border-gray-300 rounded-md flex-1 dark:bg-gray-800 dark:text-white"
+            class="flex-1 rounded-md border border-gray-300 p-3 dark:bg-gray-800 dark:text-white"
             id="region"
           >
             <option value="A">Region I</option>
@@ -58,10 +51,7 @@
             <option value="L">Caraga</option>
             <option value="J">BARMM</option>
           </select>
-          <button
-            class="bg-sky-600 text-white py-3 px-5 rounded-md flex-0"
-            id="generate"
-          >
+          <button class="flex-0 rounded-md bg-sky-600 px-5 py-3 text-white" id="generate">
             GENERATE
           </button>
         </div>
