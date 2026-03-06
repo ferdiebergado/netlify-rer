@@ -1,8 +1,4 @@
-export function getRandomElement(arr: string[]) {
-  const randomIndex = Math.floor(Math.random() * arr.length);
-
-  return arr[randomIndex];
-}
+export const getRandomIndex = (arrLen: number) => Math.floor(Math.random() * arrLen);
 
 export function generateFourDigitNumber(): number {
   const min = 1000;

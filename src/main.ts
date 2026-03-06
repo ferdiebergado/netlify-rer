@@ -2,12 +2,7 @@ import firstNamesData from './assets/firstnames.txt?raw';
 import lastNamesData from './assets/lastnames.txt?raw';
 import './style.css';
 
-import {
-  generateFourDigitNumber,
-  generateRandomLetters,
-  getRandomElement,
-  parseData,
-} from './utils';
+import { generateFourDigitNumber, generateRandomLetters, getRandomIndex, parseData } from './utils';
 
 const regionSelect = document.querySelector<HTMLSelectElement>('#region');
 const generateBtn = document.querySelector<HTMLButtonElement>('#generate');
@@ -31,9 +26,13 @@ function generate() {
     const nextLetters = generateRandomLetters(2).toLocaleUpperCase();
     const numbers = generateFourDigitNumber();
     const plate = `${firstLetter}${nextLetters} ${numbers}`;
-    const firstname = getRandomElement(firstNames);
-    const lastname = getRandomElement(lastNames);
-    const driver = `${firstname} ${lastname}`;
+
+    let randomIndex = getRandomIndex(firstNames.length);
+    const firstName = firstNames[randomIndex];
+    randomIndex = getRandomIndex(lastNames.length);
+    const lastName = lastNames[randomIndex];
+    const driver = `${firstName} ${lastName}`;
+
     if (plateDiv) plateDiv.textContent = plate;
     if (driverDiv) driverDiv.textContent = driver.toLocaleUpperCase();
   } catch (error) {
