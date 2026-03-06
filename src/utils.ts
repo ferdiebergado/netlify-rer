@@ -18,3 +18,9 @@ export function generateRandomLetters(length: number): string {
   }
   return result;
 }
+
+export function parseData(data: string) {
+  const lines = data.split('\n');
+
+  return lines.map(l => l.trim());
+}

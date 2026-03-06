@@ -2,7 +2,12 @@ import firstNamesData from './assets/firstnames.txt?raw';
 import lastNamesData from './assets/lastnames.txt?raw';
 import './style.css';
 
-import { generateFourDigitNumber, generateRandomLetters, getRandomElement } from './utils';
+import {
+  generateFourDigitNumber,
+  generateRandomLetters,
+  getRandomElement,
+  parseData,
+} from './utils';
 
 const regionSelect = document.querySelector<HTMLSelectElement>('#region');
 const generateBtn = document.querySelector<HTMLButtonElement>('#generate');
@@ -10,24 +15,13 @@ const errorDiv = document.querySelector<HTMLDivElement>('#error');
 const plateDiv = document.querySelector<HTMLDivElement>('#plate');
 const driverDiv = document.querySelector<HTMLDivElement>('#driver');
 
-let firstNames: string[];
-let lastNames: string[];
-
-parseData(firstNamesData.trim())
-  .then(data => {
-    firstNames = data;
-  })
-  .catch(e => handleError(e));
-
-parseData(lastNamesData.trim())
-  .then(data => {
-    lastNames = data;
-    generate();
-  })
-  .catch(e => handleError(e));
+const firstNames = parseData(firstNamesData.trim());
+const lastNames = parseData(lastNamesData.trim());
 
 regionSelect?.addEventListener('change', generate);
 generateBtn?.addEventListener('click', generate);
+
+generate();
 
 function generate() {
   if (errorDiv) errorDiv.style.display = 'none';
@@ -54,10 +48,4 @@ function handleError(error: unknown) {
     errorDiv.style.display = 'block';
     errorDiv.textContent = err;
   }
-}
-
-async function parseData(data: string) {
-  const lines = data.split('\n');
-
-  return lines.map(l => l.trim());
 }
