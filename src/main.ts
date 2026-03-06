@@ -4,11 +4,11 @@ import './style.css';
 
 import { generateFourDigitNumber, generateRandomLetters, getRandomElement } from './utils';
 
-const regionSelect = document.querySelector('#region') as HTMLSelectElement;
-const generateBtn = document.querySelector('#generate') as HTMLButtonElement;
-const errorDiv = document.querySelector('#error') as HTMLDivElement;
-const plateDiv = document.querySelector('#plate') as HTMLDivElement;
-const driverDiv = document.querySelector('#driver') as HTMLDivElement;
+const regionSelect = document.querySelector<HTMLSelectElement>('#region');
+const generateBtn = document.querySelector<HTMLButtonElement>('#generate');
+const errorDiv = document.querySelector<HTMLDivElement>('#error');
+const plateDiv = document.querySelector<HTMLDivElement>('#plate');
+const driverDiv = document.querySelector<HTMLDivElement>('#driver');
 
 let firstNames: string[];
 let lastNames: string[];
@@ -26,22 +26,22 @@ parseData(lastNamesData.trim())
   })
   .catch(e => handleError(e));
 
-regionSelect.addEventListener('change', generate);
-generateBtn.addEventListener('click', generate);
+regionSelect?.addEventListener('change', generate);
+generateBtn?.addEventListener('click', generate);
 
 function generate() {
-  errorDiv.style.display = 'none';
+  if (errorDiv) errorDiv.style.display = 'none';
 
   try {
-    const firstLetter = (regionSelect as HTMLSelectElement).value;
+    const firstLetter = regionSelect?.value;
     const nextLetters = generateRandomLetters(2).toLocaleUpperCase();
     const numbers = generateFourDigitNumber();
     const plate = `${firstLetter}${nextLetters} ${numbers}`;
     const firstname = getRandomElement(firstNames);
     const lastname = getRandomElement(lastNames);
     const driver = `${firstname} ${lastname}`;
-    plateDiv.textContent = plate;
-    driverDiv.textContent = driver.toLocaleUpperCase();
+    if (plateDiv) plateDiv.textContent = plate;
+    if (driverDiv) driverDiv.textContent = driver.toLocaleUpperCase();
   } catch (error) {
     handleError(error);
   }
@@ -50,8 +50,10 @@ function generate() {
 function handleError(error: unknown) {
   console.error(error);
   const err = error instanceof Error ? error.message : String(error);
-  errorDiv.style.display = 'block';
-  errorDiv.textContent = err;
+  if (errorDiv) {
+    errorDiv.style.display = 'block';
+    errorDiv.textContent = err;
+  }
 }
 
 async function parseData(data: string) {
