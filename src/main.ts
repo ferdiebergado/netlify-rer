@@ -13,13 +13,13 @@ const driverDiv = document.querySelector('#driver') as HTMLDivElement;
 let firstNames: string[];
 let lastNames: string[];
 
-parseData(firstNamesData)
+parseData(firstNamesData.trim())
   .then(data => {
     firstNames = data;
   })
   .catch(e => handleError(e));
 
-parseData(lastNamesData)
+parseData(lastNamesData.trim())
   .then(data => {
     lastNames = data;
     generate();
