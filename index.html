@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Generate random plate numbers" />
+    <meta name="description" content="Generate test data" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
@@ -16,19 +16,23 @@
   <body>
     <main class="flex h-screen items-center justify-center bg-gray-100 dark:bg-gray-800">
       <section
-        class="mx-5 w-full rounded-2xl border border-gray-200 bg-white px-10 py-12 shadow-md sm:w-lg sm:px-8 sm:py-10 dark:border-gray-900 dark:bg-gray-900 dark:text-white dark:shadow-lg"
+        class="mx-5 w-full rounded-2xl border border-gray-200 bg-white px-8 py-10 shadow-md sm:w-lg sm:px-10 sm:py-12 dark:border-gray-900 dark:bg-gray-900 dark:text-white dark:shadow-lg"
       >
-        <h1 class="mb-10 text-center text-2xl font-semibold sm:text-3xl">Random Plate Generator</h1>
+        <div
+          id="error"
+          class="hidden rounded-md bg-red-200 px-3 py-5 text-center text-red-800"
+        ></div>
 
-        <div id="error" class="rounded-md bg-red-200 px-3 py-5 text-center text-red-800"></div>
-
-        <div class="my-12 flex flex-col items-center gap-3 text-center">
-          <h2 id="plate" class="text-5xl font-bold sm:text-6xl">Plate</h2>
-          <h3 id="driver" class="text-2xl font-semibold sm:text-3xl">Driver</h3>
+        <div class="mt-6 mb-16 flex flex-col items-center gap-3 text-center">
+          <h2 id="plate" class="text-5xl font-bold sm:text-6xl"></h2>
+          <h3
+            id="driver"
+            class="text-2xl font-semibold text-gray-500 sm:text-3xl dark:text-gray-400"
+          ></h3>
         </div>
 
         <form class="flex flex-col">
-          <div class="mb-8 flex items-center gap-5">
+          <div class="mb-10 flex items-center gap-5">
             <label class="text-gray-600 dark:text-white" for="region">Region:</label>
             <select
               id="region"
