@@ -21,11 +21,11 @@ export const parseData = (data: string): string[] =>
     .map(l => l.trim())
     .filter(l => l.length > 0);
 
-export function generatePlate(firstChar = 'P', nextCharsLength = 2): string {
-  const nextChars = generateRandomLetters(nextCharsLength).toLocaleUpperCase();
+export function generatePlate(firstChar = 'P', otherCharsLength = 2): string {
+  const otherChars = generateRandomLetters(otherCharsLength).toLocaleUpperCase();
   const digits = generateFourDigitNumber();
 
-  return `${firstChar}${nextChars} ${digits}`;
+  return `${firstChar}${otherChars} ${digits}`;
 }
 
 export function generateDriver(firstNames: string[], lastNames: string[]): string {
