@@ -12,7 +12,6 @@ const generateBtn = getEl<HTMLButtonElement>('#generate');
 const errorDiv = getEl<HTMLDivElement>('#error');
 const plateDiv = getEl<HTMLDivElement>('#plate');
 const driverDiv = getEl<HTMLDivElement>('#driver');
-const resultDiv = getEl<HTMLOutputElement>('#result');
 
 regionSelect.addEventListener('change', generate);
 generateBtn.addEventListener('click', generate);
@@ -31,8 +30,6 @@ function generate(e?: Event) {
     plateDiv.textContent = plate;
     const driver = generateDriver(firstNames, lastNames);
     driverDiv.textContent = driver;
-
-    resultDiv.animate([{ opacity: 0.1 }, { opacity: 1 }], { duration: 700 });
   } catch (error) {
     showError(error);
   }
