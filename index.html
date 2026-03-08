@@ -14,29 +14,38 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
   </head>
   <body>
-    <main class="flex h-screen items-center justify-center bg-gray-100 dark:bg-gray-800">
-      <section
-        class="mx-5 w-full rounded-2xl border border-gray-200 bg-white px-8 py-10 shadow-md sm:w-lg sm:px-10 sm:py-12 dark:border-gray-900 dark:bg-gray-900 dark:text-white dark:shadow-lg"
+    <main class="flex min-h-dvh items-center justify-center bg-gray-100 dark:bg-gray-800">
+      <div
+        class="mx-5 w-full max-w-lg rounded-2xl border border-gray-200 bg-white px-8 py-12 shadow-md sm:px-10 sm:py-12 dark:border-gray-900 dark:bg-gray-900 dark:text-white dark:shadow-lg"
       >
         <div
           id="error"
-          class="hidden rounded-md bg-red-200 px-3 py-5 text-center text-red-800"
-        ></div>
-
-        <div class="mt-6 mb-16 flex flex-col items-center gap-3 text-center">
-          <div id="plate" class="text-5xl font-bold sm:text-6xl"></div>
-          <div
-            id="driver"
-            class="text-2xl font-semibold text-gray-500 sm:text-3xl dark:text-gray-400"
-          ></div>
+          class="hidden rounded-md border border-red-400 bg-red-200 px-3 py-5 text-center text-red-900"
+          role="alert"
+        >
+          Something went wrong.
         </div>
 
-        <form class="flex flex-col gap-10">
+        <div class="m-12 flex flex-col items-center" aria-live="polite">
+          <div id="plate" class="mb-2 text-center font-mono text-5xl font-bold sm:text-6xl">
+            --- ----
+          </div>
+          <div
+            id="driver"
+            class="flex min-h-[3em] w-full justify-center text-center text-2xl font-semibold text-gray-500 sm:text-3xl dark:text-gray-400"
+          >
+            Click GENERATE to start.
+          </div>
+        </div>
+
+        <form class="space-y-8">
           <div class="flex items-center gap-5">
-            <label class="text-gray-600 dark:text-white" for="region">Region:</label>
+            <label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="region"
+              >Region:</label
+            >
             <select
               id="region"
-              class="flex-1 rounded-md border border-gray-300 p-3 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+              class="flex-1 rounded-md border border-gray-300 bg-gray-50 p-3 text-base outline-none focus:ring-2 focus:ring-sky-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
               aria-required="true"
               required
             >
@@ -60,11 +69,15 @@
               <option value="J">BARMM</option>
             </select>
           </div>
-          <button type="button" id="generate" class="rounded-md bg-sky-700 px-5 py-3 text-white">
+          <button
+            type="submit"
+            id="generate"
+            class="w-full rounded-lg bg-sky-700 px-6 py-4 font-bold text-white transition-all hover:bg-sky-600 focus:ring-4 focus:ring-sky-300 active:scale-[0.98]"
+          >
             GENERATE
           </button>
         </form>
-      </section>
+      </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

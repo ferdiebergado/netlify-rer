@@ -15,13 +15,12 @@ const driverDiv = document.querySelector<HTMLDivElement>('#driver');
 
 regionSelect?.addEventListener('change', generate);
 generateBtn?.addEventListener('click', generate);
+globalThis.addEventListener('DOMContentLoaded', generate);
 
-generate();
+function generate(e: Event) {
+  e.preventDefault();
 
-function generate() {
   if (errorDiv) errorDiv.style.display = 'none';
-
-  generateBtn?.classList.add('transition-transform', 'active:scale-95');
 
   try {
     if (plateDiv) {
