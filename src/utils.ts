@@ -1,4 +1,7 @@
-export const getRandomIndex = (arrLength: number): number => Math.floor(Math.random() * arrLength);
+function getRandomElement(arr: string[]): string {
+  const index = Math.floor(Math.random() * arr.length);
+  return arr[index];
+}
 
 export function generateFourDigitNumber(): number {
   const min = 1000;
@@ -29,12 +32,8 @@ export function generatePlate(firstChar = 'P', otherCharsLength = 2): string {
 }
 
 export function generateDriver(firstNames: string[], lastNames: string[]): string {
-  let randomIndex = getRandomIndex(firstNames.length);
-  const firstName = firstNames[randomIndex];
-
-  randomIndex = getRandomIndex(lastNames.length);
-  const lastName = lastNames[randomIndex];
-
+  const firstName = getRandomElement(firstNames);
+  const lastName = getRandomElement(lastNames);
   const driver = `${firstName} ${lastName}`;
 
   return driver.toLocaleUpperCase();
