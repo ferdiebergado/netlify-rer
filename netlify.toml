@@ -13,3 +13,4 @@ Permissions-Policy = "geolocation=(), midi=(),  payment=(), camera=(), microphon
 
 [dev]
 command = "vite"
+port = 8888
