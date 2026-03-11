@@ -1,1 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Zen+Dots&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --font-zendots: 'Zen Dots';
+  --font-encode: 'Encode Sans';
+}
