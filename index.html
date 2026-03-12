@@ -36,17 +36,10 @@
           </div>
         </div>
 
-        <form class="space-y-8">
-          <div class="flex items-center gap-5">
-            <label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="region"
-              >Region:</label
-            >
-            <select
-              id="region"
-              class="flex-1 rounded-md border border-gray-300 bg-gray-50 p-3 text-base outline-none focus:ring-2 focus:ring-sky-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
-              aria-required="true"
-              required
-            >
+        <form class="space-y-7">
+          <fieldset class="flex items-center gap-5">
+            <label class="text-sm text-gray-700 dark:text-gray-300" for="region">Region</label>
+            <select id="region" class="select select-lg flex-1">
               <option value="A">Region I</option>
               <option value="B">Region II</option>
               <option value="C">Region III</option>
@@ -66,7 +59,7 @@
               <option value="L">Caraga</option>
               <option value="J">BARMM</option>
             </select>
-          </div>
+          </fieldset>
           <button
             type="submit"
             id="generate"
