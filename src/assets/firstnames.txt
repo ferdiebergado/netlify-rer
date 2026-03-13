@@ -5,7 +5,6 @@ abner
 abraham
 ace
 adolfo
-adoniram
 adonis
 adrian
 adriano
@@ -29,8 +28,6 @@ alfredo
 aljon
 allan
 allen
-almazan
-alon
 alonzo
 alvin
 amado
@@ -39,7 +36,6 @@ ambrocio
 ambrosio
 amiel
 amir
-amos
 anacleto
 anastacio
 andrei
@@ -164,7 +160,6 @@ dave
 david
 dean
 delfin
-demeterio
 demetrio
 dennis
 denver
