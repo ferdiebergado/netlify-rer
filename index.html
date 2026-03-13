@@ -30,7 +30,7 @@
           <div id="plate" class="font-zendots mb-2 text-center text-4xl font-bold">--- ----</div>
           <div
             id="driver"
-            class="font-encode flex min-h-[3em] w-full justify-center text-center text-2xl font-bold text-gray-500 dark:text-gray-400"
+            class="font-encode flex min-h-[3em] w-full justify-center text-center text-2xl font-bold text-slate-500 dark:text-slate-400"
           >
             Click GENERATE to start.
           </div>
@@ -42,7 +42,7 @@
             <div class="relative w-full">
               <select
                 id="region"
-                class="w-full flex-1 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none"
+                class="w-full flex-1 appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-10 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none dark:bg-slate-700 dark:text-gray-100"
               >
                 <option value="A">Region I</option>
                 <option value="B">Region II</option>
@@ -65,7 +65,7 @@
               </select>
 
               <svg
-                class="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500"
+                class="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500 dark:text-gray-200"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -83,15 +83,17 @@
           <button
             type="submit"
             id="generate"
-            class="w-full rounded-lg bg-sky-700 px-6 py-4 font-bold text-white transition-all hover:bg-sky-600 focus:ring-4 focus:ring-sky-300 active:scale-[0.98]"
+            class="w-full rounded-lg bg-indigo-700 px-6 py-4 font-bold text-white transition-all hover:bg-indigo-600 focus:ring-3 focus:ring-indigo-300 focus:outline-none active:scale-[0.98]"
+            autofocus
           >
             GENERATE
           </button>
         </form>
-        <p class="mt-6 text-center text-xs text-gray-500 dark:text-gray-400">
-          <span class="font-bold">DISCLAIMER:</span> This app generates synthetic test data only.
-          Any resemblance to real persons is purely coincidental. Use of this data for official or
-          commercial purposes is outside of its intended design.
+        <p class="mt-8 py-2 text-xs leading-relaxed text-red-500 dark:text-red-400">
+          <strong>DISCLAIMER:</strong>
+          This app generates synthetic test data only. Any resemblance to real persons is purely
+          coincidental. Use of this data for official or commercial purposes is outside of its
+          intended design.
         </p>
       </div>
     </main>
