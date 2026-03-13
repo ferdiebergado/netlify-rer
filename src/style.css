@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Zen+Dots&display=swap');
 @import 'tailwindcss';
-@plugin 'daisyui' {
-  include: select;
-}
 
 @theme {
   --font-zendots: 'Zen Dots';
